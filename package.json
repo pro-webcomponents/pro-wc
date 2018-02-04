@@ -1,0 +1,54 @@
+{
+  "name": "@pro-wc/core",
+  "private": true,
+  "version": "0.0.1",
+  "description": "High Quality Misc WebComponents",
+  "author": "Ionic Team",
+  "license": "MIT",
+  "main": "dist/prowc.js",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": ["dist/"],
+
+  "scripts": {
+    "build": "stencil build",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev",
+    "test": "jest --no-cache",
+    "test.watch": "jest --watch --no-cache"
+  },
+  "dependencies": {
+    "@stencil/core": "0.2.3"
+  },
+  "devDependencies": {
+    "@stencil/dev-server": "latest",
+    "@stencil/utils": "latest",
+    "@types/jest": "^21.1.1",
+    "jest": "^21.2.1",
+    "np": "^2.19.0",
+    "tslint": "^5.9.1",
+    "tslint-ionic-rules": "0.0.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pro-webcomponents/pro-wc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pro-webcomponents/pro-wc"
+  },
+  "homepage": "https://github.com/pro-webcomponents/pro-wc",
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
+  }
+}
