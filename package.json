@@ -1,9 +1,8 @@
 {
   "name": "@pro-wc/core",
-  "private": true,
   "version": "0.0.1",
   "description": "High Quality Misc WebComponents",
-  "author": "Ionic Team",
+  "author": "Manu Mtz.-Almeida",
   "license": "MIT",
   "main": "dist/prowc.js",
   "types": "dist/types/index.d.ts",
@@ -12,12 +11,14 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build",
+    "build": "stencil build --docs",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
     "start": "npm run dev",
+    "serve": "stencil-dev-server",
+    "version": "npm run build",
     "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
+    "test.watch": "jest --watch --no-cache",
+    "deploy": "np"
   },
   "dependencies": {
     "@stencil/core": "0.2.3"
