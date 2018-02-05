@@ -2,10 +2,10 @@ import { Component, Element, Prop, State } from '@stencil/core';
 
 
 @Component({
-  tag: 'pro-voice2text',
-  styleUrl: 'voice2text.scss'
+  tag: 'pro-speech',
+  styleUrl: 'speech.scss'
 })
-export class Voice2text {
+export class Speech {
 
   @Element() element: any;
 
@@ -49,8 +49,8 @@ export class Voice2text {
   hostData() {
     return {
       class: {
-        'voice2text-enabled': this.recognition !== null && this.enabled,
-        'voice2text-recording': this.recording
+        'speech-enabled': this.recognition !== null && this.enabled,
+        'speech-recording': this.recording
       }
     };
   }
@@ -59,9 +59,9 @@ export class Voice2text {
     const dom = [<slot />];
     if (this.recognition) {
       dom.push(
-        <button type='button' class='voice2text-start' onClick={() => this.start()}>
+        <button type='button' class='speech-start' onClick={() => this.start()}>
         </button>,
-        <button type='button' class='voice2text-stop' onClick={() => this.stop()}>
+        <button type='button' class='speech-stop' onClick={() => this.stop()}>
         </button>
       );
     }
