@@ -39,4 +39,36 @@ declare global {
   }
 }
 
+
+import {
+  Img as ProImg
+} from './components/img/img';
+
+declare global {
+  interface HTMLProImgElement extends ProImg, HTMLElement {
+  }
+  var HTMLProImgElement: {
+    prototype: HTMLProImgElement;
+    new (): HTMLProImgElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-img": HTMLProImgElement;
+  }
+  interface ElementTagNameMap {
+    "pro-img": HTMLProImgElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-img": JSXElements.ProImgAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProImgAttributes extends HTMLAttributes {
+      alt?: string;
+      fit?: boolean;
+      src?: string;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
