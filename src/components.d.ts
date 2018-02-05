@@ -71,4 +71,68 @@ declare global {
   }
 }
 
+
+import {
+  Payment as ProPayment
+} from './components/payment/payment';
+
+declare global {
+  interface HTMLProPaymentElement extends ProPayment, HTMLElement {
+  }
+  var HTMLProPaymentElement: {
+    prototype: HTMLProPaymentElement;
+    new (): HTMLProPaymentElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-payment": HTMLProPaymentElement;
+  }
+  interface ElementTagNameMap {
+    "pro-payment": HTMLProPaymentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-payment": JSXElements.ProPaymentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProPaymentAttributes extends HTMLAttributes {
+      details?: PaymentDetails;
+      methodData?: PaymentMethodData[];
+      options?: PaymentOptions;
+    }
+  }
+}
+
+
+import {
+  Speech as ProSpeech
+} from './components/speech/speech';
+
+declare global {
+  interface HTMLProSpeechElement extends ProSpeech, HTMLElement {
+  }
+  var HTMLProSpeechElement: {
+    prototype: HTMLProSpeechElement;
+    new (): HTMLProSpeechElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-speech": HTMLProSpeechElement;
+  }
+  interface ElementTagNameMap {
+    "pro-speech": HTMLProSpeechElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-speech": JSXElements.ProSpeechAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProSpeechAttributes extends HTMLAttributes {
+      continuous?: boolean;
+      enabled?: boolean;
+      lang?: string;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }

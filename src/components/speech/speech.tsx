@@ -7,6 +7,8 @@ import { Component, Element, Prop, State } from '@stencil/core';
 })
 export class Speech {
 
+  private input: HTMLInputElement | null;
+
   @Element() element: any;
 
   @State() recording = false;
@@ -15,8 +17,6 @@ export class Speech {
   @Prop() enabled = true;
   @Prop() lang = 'en-US';
   @Prop() continuous = false;
-
-  input: HTMLInputElement;
 
   componentDidLoad() {
     if ('webkitSpeechRecognition' in window) {
@@ -31,17 +31,23 @@ export class Speech {
         this.recording = false;
       };
       this.recognition.onresult = (event: any) => {
-        this.input.value = event.results[0][0].transcript;
+        if (this.input) {
+          this.input.value = event.results[0][0].transcript;
+        }
       };
     }
   }
 
-  start() {
+  componentDidUnload() {
+    this.input = null;
+  }
+
+  private onStart() {
     this.recording = true;
     this.recognition.start();
   }
 
-  stop() {
+  private onStop() {
     this.recording = false;
     this.recognition.stop();
   }
@@ -59,9 +65,9 @@ export class Speech {
     const dom = [<slot />];
     if (this.recognition) {
       dom.push(
-        <button type='button' class='speech-start' onClick={() => this.start()}>
+        <button type='button' class='speech-start' onClick={() => this.onStart()}>
         </button>,
-        <button type='button' class='speech-stop' onClick={() => this.stop()}>
+        <button type='button' class='speech-stop' onClick={() => this.onStop()}>
         </button>
       );
     }
