@@ -1,10 +1,10 @@
 {
-  "name": "@pro-wc/core",
+  "name": "pro-webcomponents",
   "version": "0.0.1",
   "description": "High Quality Misc WebComponents",
   "author": "Manu Mtz.-Almeida",
   "license": "MIT",
-  "main": "dist/prowc.js",
+  "main": "dist/pro-wc.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [

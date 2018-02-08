@@ -1,5 +1,5 @@
 exports.config = {
-  namespace: 'ProWC',
+  namespace: 'pro-wc',
   bundles: [],
   generateDistribution: true,
   generateWWW: false,
