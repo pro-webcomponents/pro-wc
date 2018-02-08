@@ -4,6 +4,9 @@
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
 
+import {
+  PtrCallback,
+} from './components/pointerevents/pointerevents';
 
 import {
   GLShader as ProGlshader
@@ -99,6 +102,42 @@ declare global {
       details?: PaymentDetails;
       methodData?: PaymentMethodData[];
       options?: PaymentOptions;
+    }
+  }
+}
+
+
+import {
+  PointerEvents as ProPointerevents
+} from './components/pointerevents/pointerevents';
+
+declare global {
+  interface HTMLProPointereventsElement extends ProPointerevents, HTMLElement {
+  }
+  var HTMLProPointereventsElement: {
+    prototype: HTMLProPointereventsElement;
+    new (): HTMLProPointereventsElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-pointerevents": HTMLProPointereventsElement;
+  }
+  interface ElementTagNameMap {
+    "pro-pointerevents": HTMLProPointereventsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-pointerevents": JSXElements.ProPointereventsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProPointereventsAttributes extends HTMLAttributes {
+      attachTo?: any;
+      autoBlockAll?: boolean;
+      disabled?: boolean;
+      onEnd?: PtrCallback;
+      onMove?: PtrCallback;
+      onStart?: PtrCallback;
+      passive?: boolean;
     }
   }
 }
