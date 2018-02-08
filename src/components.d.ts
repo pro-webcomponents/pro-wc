@@ -6,7 +6,7 @@
 
 import {
   PtrCallback,
-} from './components/pointerevents/pointerevents';
+} from './components/pointer-events/pointer-events';
 
 import {
   GLShader as ProGlshader
@@ -108,29 +108,29 @@ declare global {
 
 
 import {
-  PointerEvents as ProPointerevents
-} from './components/pointerevents/pointerevents';
+  PointerEvents as ProPointerEvents
+} from './components/pointer-events/pointer-events';
 
 declare global {
-  interface HTMLProPointereventsElement extends ProPointerevents, HTMLElement {
+  interface HTMLProPointerEventsElement extends ProPointerEvents, HTMLElement {
   }
-  var HTMLProPointereventsElement: {
-    prototype: HTMLProPointereventsElement;
-    new (): HTMLProPointereventsElement;
+  var HTMLProPointerEventsElement: {
+    prototype: HTMLProPointerEventsElement;
+    new (): HTMLProPointerEventsElement;
   };
   interface HTMLElementTagNameMap {
-    "pro-pointerevents": HTMLProPointereventsElement;
+    "pro-pointer-events": HTMLProPointerEventsElement;
   }
   interface ElementTagNameMap {
-    "pro-pointerevents": HTMLProPointereventsElement;
+    "pro-pointer-events": HTMLProPointerEventsElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "pro-pointerevents": JSXElements.ProPointereventsAttributes;
+      "pro-pointer-events": JSXElements.ProPointerEventsAttributes;
     }
   }
   namespace JSXElements {
-    export interface ProPointereventsAttributes extends HTMLAttributes {
+    export interface ProPointerEventsAttributes extends HTMLAttributes {
       attachTo?: any;
       autoBlockAll?: boolean;
       disabled?: boolean;

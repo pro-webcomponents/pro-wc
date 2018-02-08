@@ -10,7 +10,7 @@ export interface PtrCallback {
 }
 
 @Component({
-  tag: 'pro-pointerevents',
+  tag: 'pro-pointer-events',
 })
 export class PointerEvents {
 
