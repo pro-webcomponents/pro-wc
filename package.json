@@ -1,6 +1,5 @@
 {
   "name": "@pro-webcomponents/core",
-  "private": false,
   "version": "0.0.3",
   "description": "High Quality Misc WebComponents",
   "author": "Manu Mtz.-Almeida",
@@ -11,6 +10,9 @@
   "files": [
     "dist/"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "stencil build --docs",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
