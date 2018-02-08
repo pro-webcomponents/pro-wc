@@ -1,5 +1,6 @@
 {
   "name": "@pro-webcomponents/core",
+  "private": false,
   "version": "0.0.3",
   "description": "High Quality Misc WebComponents",
   "author": "Manu Mtz.-Almeida",
