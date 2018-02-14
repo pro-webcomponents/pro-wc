@@ -44,12 +44,12 @@ boolean
 
 ## Attributes
 
-#### attachTo
+#### attach-to
 
 any
 
 
-#### autoBlockAll
+#### auto-block-all
 
 boolean
 
@@ -59,17 +59,17 @@ boolean
 boolean
 
 
-#### onEnd
+#### on-end
 
 
 
 
-#### onMove
+#### on-move
 
 
 
 
-#### onStart
+#### on-start
 
 
 
@@ -98,4 +98,4 @@ boolean
 
 ----------------------------------------------
 
-*Built by [StencilJS](https://stenciljs.com/)*
+*Built with [StencilJS](https://stenciljs.com/)*

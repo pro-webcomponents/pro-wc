@@ -7,39 +7,29 @@
 
 ## Properties
 
-#### alt
+#### component
 
 string
 
 
-#### fit
-
-boolean
+#### props
 
 
-#### src
-
-string
 
 
 ## Attributes
 
-#### alt
+#### component
 
 string
 
 
-#### fit
-
-boolean
+#### props
 
 
-#### src
-
-string
 
 
 
 ----------------------------------------------
 
-*Built by [StencilJS](https://stenciljs.com/)*
+*Built with [StencilJS](https://stenciljs.com/)*

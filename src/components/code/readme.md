@@ -7,34 +7,24 @@
 
 ## Properties
 
-#### alt
+#### code
 
 string
 
 
-#### fit
-
-boolean
-
-
-#### src
+#### lang
 
 string
 
 
 ## Attributes
 
-#### alt
+#### code
 
 string
 
 
-#### fit
-
-boolean
-
-
-#### src
+#### lang
 
 string
 
@@ -42,4 +32,4 @@ string
 
 ----------------------------------------------
 
-*Built by [StencilJS](https://stenciljs.com/)*
+*Built with [StencilJS](https://stenciljs.com/)*
