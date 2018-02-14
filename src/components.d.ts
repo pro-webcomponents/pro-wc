@@ -8,12 +8,52 @@ import {
   PtrCallback,
 } from './components/pointer-events/pointer-events';
 
+declare global {
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+  }
+}
+
+
+
+import {
+  Code as ProCode
+} from './components/code/code';
+
+declare global {
+  interface HTMLProCodeElement extends ProCode, HTMLStencilElement {
+  }
+  var HTMLProCodeElement: {
+    prototype: HTMLProCodeElement;
+    new (): HTMLProCodeElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-code": HTMLProCodeElement;
+  }
+  interface ElementTagNameMap {
+    "pro-code": HTMLProCodeElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-code": JSXElements.ProCodeAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProCodeAttributes extends HTMLAttributes {
+      code?: string;
+      lang?: string;
+    }
+  }
+}
+
+
 import {
   GLShader as ProGlshader
 } from './components/glshader/glshader';
 
 declare global {
-  interface HTMLProGlshaderElement extends ProGlshader, HTMLElement {
+  interface HTMLProGlshaderElement extends ProGlshader, HTMLStencilElement {
   }
   var HTMLProGlshaderElement: {
     prototype: HTMLProGlshaderElement;
@@ -48,7 +88,7 @@ import {
 } from './components/img/img';
 
 declare global {
-  interface HTMLProImgElement extends ProImg, HTMLElement {
+  interface HTMLProImgElement extends ProImg, HTMLStencilElement {
   }
   var HTMLProImgElement: {
     prototype: HTMLProImgElement;
@@ -76,11 +116,72 @@ declare global {
 
 
 import {
+  Lazy as ProLazy
+} from './components/lazy/lazy';
+
+declare global {
+  interface HTMLProLazyElement extends ProLazy, HTMLStencilElement {
+  }
+  var HTMLProLazyElement: {
+    prototype: HTMLProLazyElement;
+    new (): HTMLProLazyElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-lazy": HTMLProLazyElement;
+  }
+  interface ElementTagNameMap {
+    "pro-lazy": HTMLProLazyElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-lazy": JSXElements.ProLazyAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProLazyAttributes extends HTMLAttributes {
+      component?: string;
+      props?: {[key: string]: any};
+    }
+  }
+}
+
+
+import {
+  Markdown as ProMarkdown
+} from './components/markdown/markdown';
+
+declare global {
+  interface HTMLProMarkdownElement extends ProMarkdown, HTMLStencilElement {
+  }
+  var HTMLProMarkdownElement: {
+    prototype: HTMLProMarkdownElement;
+    new (): HTMLProMarkdownElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-markdown": HTMLProMarkdownElement;
+  }
+  interface ElementTagNameMap {
+    "pro-markdown": HTMLProMarkdownElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-markdown": JSXElements.ProMarkdownAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProMarkdownAttributes extends HTMLAttributes {
+      content?: string;
+    }
+  }
+}
+
+
+import {
   Payment as ProPayment
 } from './components/payment/payment';
 
 declare global {
-  interface HTMLProPaymentElement extends ProPayment, HTMLElement {
+  interface HTMLProPaymentElement extends ProPayment, HTMLStencilElement {
   }
   var HTMLProPaymentElement: {
     prototype: HTMLProPaymentElement;
@@ -112,7 +213,7 @@ import {
 } from './components/pointer-events/pointer-events';
 
 declare global {
-  interface HTMLProPointerEventsElement extends ProPointerEvents, HTMLElement {
+  interface HTMLProPointerEventsElement extends ProPointerEvents, HTMLStencilElement {
   }
   var HTMLProPointerEventsElement: {
     prototype: HTMLProPointerEventsElement;
@@ -148,7 +249,7 @@ import {
 } from './components/speech/speech';
 
 declare global {
-  interface HTMLProSpeechElement extends ProSpeech, HTMLElement {
+  interface HTMLProSpeechElement extends ProSpeech, HTMLStencilElement {
   }
   var HTMLProSpeechElement: {
     prototype: HTMLProSpeechElement;
