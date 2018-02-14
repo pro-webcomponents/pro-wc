@@ -19,8 +19,6 @@
     "start": "npm run dev",
     "serve": "stencil-dev-server",
     "version": "npm run build",
-    "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache",
     "deploy": "np"
   },
   "dependencies": {
@@ -47,18 +45,5 @@
   "bugs": {
     "url": "https://github.com/pro-webcomponents/pro-wc"
   },
-  "homepage": "https://github.com/pro-webcomponents/pro-wc",
-  "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "jsx"
-    ]
-  }
+  "homepage": "https://github.com/pro-webcomponents/pro-wc"
 }
