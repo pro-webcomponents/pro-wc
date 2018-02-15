@@ -1,10 +1,10 @@
 import { Component, Element, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'pro-lazy-video',
-  styleUrl: 'lazy-video.scss'
+  tag: 'pro-video',
+  styleUrl: 'pro-video.scss'
 })
-export class LazyVideo {
+export class ProVideo {
 
   private io: IntersectionObserver | null = null;
 
