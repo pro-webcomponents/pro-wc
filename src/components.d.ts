@@ -147,6 +147,48 @@ declare global {
 
 
 import {
+  ProMap as ProMap
+} from './components/map/pro-map';
+
+declare global {
+  interface HTMLProMapElement extends ProMap, HTMLStencilElement {
+  }
+  var HTMLProMapElement: {
+    prototype: HTMLProMapElement;
+    new (): HTMLProMapElement;
+  };
+  interface HTMLElementTagNameMap {
+    "pro-map": HTMLProMapElement;
+  }
+  interface ElementTagNameMap {
+    "pro-map": HTMLProMapElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "pro-map": JSXElements.ProMapAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProMapAttributes extends HTMLAttributes {
+      apikey?: string;
+      center?: any;
+      disableDefaultUI?: boolean;
+      fullscreenControl?: boolean;
+      lat?: any;
+      lng?: number;
+      mapTypeControl?: boolean;
+      mapTypeId?: 'roadmap'|'satellite'|'hybrid'|'terrain';
+      rotateControl?: boolean;
+      scaleControl?: boolean;
+      streetViewControl?: boolean;
+      zoom?: number;
+      zoomControl?: boolean;
+    }
+  }
+}
+
+
+import {
   Markdown as ProMarkdown
 } from './components/markdown/markdown';
 
