@@ -17,7 +17,7 @@ export class ProMap {
   @Prop() lat = -25.363;
   @Prop() lng = 131.044;
   @Prop() zoom = 4;
-  @Prop() apikey: string = 'AIzaSyBcwp6219pSj_uq6jx-bofIiEqrqrBtaJk';
+  @Prop() apikey: string;
 
   @Prop() disableDefaultUI = true;
   @Prop() zoomControl: boolean;
@@ -43,10 +43,12 @@ export class ProMap {
   @Watch('mapTypeId')
   updateMapTypeId() {
     this.map.setMapTypeId(this.mapTypeId);
-
   }
 
   componentWillLoad() {
+    if (!this.apikey) {
+      return Promise.reject('pro-map needs a Google Maps api key');
+    }
     return getGoogleMaps(this.apikey).then(maps => this.GoogleMaps = maps);
   }
 
