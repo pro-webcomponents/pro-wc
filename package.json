@@ -15,14 +15,14 @@
   },
   "scripts": {
     "build": "stencil build --docs",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "dev": "sd concurrent \"stencil build --watch\" \"stencil-dev-server\" ",
     "start": "npm run dev",
     "serve": "stencil-dev-server",
     "version": "npm run build",
     "deploy": "np"
   },
   "dependencies": {
-    "@stencil/core": "0.5.1",
+    "@stencil/core": "0.5.2",
     "@types/highlight.js": "^9.12.2",
     "@types/googlemaps": "^3.30.7",
     "highlight.js": "^9.12.0",
